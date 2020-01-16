@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace personnel{% endblock %}
+
+{% block body %}
+<style>
+    .style {
+        margin: 1em auto;
+        max-width: 800px;
+        width: 95%;
+        font: 18px/1.5 sans-serif;
+    }
+</style>
+
+<a href="{{ path('app_logout') }}" class="btn btn-dark float-right">Logout</a>
+
+<div class="style">
+
+<h2>
+    Bienvenue {{ app.user.firstname }} {{ app.user.lastname }} dans votre espace personnel !
+</h2>
+
+{#Pour améliorer cette page, j'ai pensé ajouté une rubrique avec tout les rdv pour chaque user.
+Peut-être une fiche d'identité avec des infos personnelles. Il y a plein de choses à exploiter,
+cela dépend de la finalité du projet(intranet, site marchand, etc...)#}
+</div>
+
+{% endblock %}
+
+
+
+

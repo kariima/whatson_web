@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des RDV.{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper {
+        margin: 1em auto;
+        max-width: 800px;
+        width: 95%;
+        font: 18px/1.5 sans-serif;
+    }
+</style>
+
+<a href="{{ path('accueil') }}" class="btn btn-dark float-left m-2">Accueil</a>
+
+<div class="example-wrapper mb-5">
+    <h1>Liste des RDV :</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>User</th>
+                <th>Client</th>
+                <th>Lieu</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for appointment in appointments %}
+            <tr>
+                <td>{{ appointment.id }}</td>
+                <td> {{ appointment.user }} {{ appointment.user.lastname }} {{ appointment.user.firstname }} </td> 
+                <td> {{ appointment.customer }} {{ appointment.customer.lastname }} {{ appointment.customer.firstname }} </td>
+                <td> {{ appointment.place }} {{ appointment.place.name }}</td>
+                <td>{{ appointment.date | date('d/m/Y') }} {{ appointment.date | date('H:i:s') }}</td>
+                <td>
+                    <a class="btn btn-primary mb-2" href="{{ path('appointment_show', {'id': appointment.id}) }}">Détails</a
+                        class="btn btn-primary">
+                    <a class="btn btn-secondary" href="{{ path('appointment_edit', {'id': appointment.id}) }}">Modifier</a>
+                </td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-success float-right mt-5" href="{{ path('appointment_new') }}">Ajouter un RDV</a>
+</div>
+{% endblock %}

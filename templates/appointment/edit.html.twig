@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Update{% endblock %}
+
+{% block body %}
+
+<style>
+    .example-wrapper {
+        margin: 1em auto;
+        max-width: 800px;
+        width: 95%;
+        font: 18px/1.5 sans-serif;
+    }
+</style>
+
+<div class="example-wrapper">
+    <h2>Modification des informations :</h2>
+
+    {{ form_start(form) }}
+
+    {{ form_widget(form) }}
+
+    <button class="btn btn-dark mt-5">Update</button>
+
+    {{ form_end(form) }}
+</div>
+
+{% endblock %}
+
+

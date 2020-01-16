@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon test Whatson web!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Bienvenue sur mon test Whatson web !</h1>
+
+
+    <p>J'ai vraiment pris du plaisir à réaliser ce test. Je vais partager avec vous mon expérience.</p>
+
+    <p>Pour commencer, j'ai trouvé ce test très intéressant et stimulant. 
+    J'ai pu mettre à profit les connaissances que j'avais déjà et m'améliorer sur certains points.
+    Je n'ai pas trop eu de souci à mettre en place le crud que j'ai fait manuellement 
+    (sans la commande make:crud). </br>
+    Par contre, la difficulté que j'ai rencontrée c'est la mise en place de l'import du fichier csv. 
+    La documentation n'est pas facile à déchiffrer. 
+    Pour l'instant, j'ai intégré à mon projet le package league csv 
+    grâce à la doc de Symfony. Maintenant, la manipulation des données pour importer le fichier 
+    reste assez flou pour moi. J'aime écrire du code que je puisse comprendre, surtout quand c'est une nouvelle 
+    fonctionnalité que je n'ai pas encore développée.</br></br>
+    Merci pour ce test et à très vite pour le debriefing.</p>
+
+    <a href="{{ path('app_register') }}" class="btn btn-dark float-right m-2">Registration</a>
+    <a href="{{ path('customer_new') }}" class="btn btn-primary float-right m-2">add Customer</a>
+    <a href="{{ path('place_new') }}" class="btn btn-danger float-right m-2">add Place</a>
+    <a href="{{ path('appointment_new') }}" class="btn btn-success float-right m-2">add Rdv</a>
+
+
+</div>
+{% endblock %}

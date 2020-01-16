@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rendez-vous{% endblock %}
+
+{% block body %}
+<h1>Rendez-vous</h1>
+
+<table class="table">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ appointments.id }}</td> 
+        </tr>
+        <tr>
+            <th>User</th>
+            <td>{{ appointments.user.lastname }} {{ appointments.user.firstname }} </td>
+        </tr>
+        <tr>
+            <th>Client</th>
+            <td>{{ appointments.customer.lastname }} {{ appointments.customer.firstname }} </td>
+        </tr>
+        <tr>
+            <th>Date</th>
+            <td>{{ appointments.date | date('d/m/Y') }} {{ appointments.date | date('H:i:s') }} </td>
+        </tr>
+    </tbody>
+</table>
+
+<a class="btn btn-primary" href="{{ path('appointment') }}">Liste</a>
+
+<a class="btn btn-secondary" href="{{ path('appointment_edit', {'id': appointments.id}) }}">Modifier</a>
+
+{{ include('appointment/delete.html.twig') }}
+{% endblock %}
+
+
